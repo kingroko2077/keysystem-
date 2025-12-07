@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Check Key System</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #f0f0f0;
+
+            padding: 20px;
+
+            text-align: center;
+
+        }
+
+        .box {
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            width: 350px;
+
+            margin: auto;
+
+            box-shadow: 0 0 10px #ccc;
+
+        }
+
+        input {
+
+            width: 90%;
+
+            padding: 10px;
+
+            margin-bottom: 10px;
+
+        }
+
+        button {
+
+            padding: 10px 20px;
+
+            background: #007bff;
+
+            border: none;
+
+            color: white;
+
+            cursor: pointer;
+
+            border-radius: 8px;
+
+        }
+
+        button:hover {
+
+            background: #0056b3;
+
+        }
+
+        .result {
+
+            margin-top: 15px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>🔑 Check Key</h2>
+
+    <input id="keyInput" type="text" placeholder="Nhập key vào đây...">
+
+    <br>
+
+    <button onclick="checkKey()">Check Key</button>
+
+    <div id="result" class="result"></div>
+
+</div>
+
+<script>
+
+function checkKey() {
+
+    let key = document.getElementById("keyInput").value;
+
+    fetch("index.php?key=" + key)
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        document.getElementById("result").innerHTML = data.message;
+
+    })
+
+    .catch(err => {
+
+        document.getElementById("result").innerHTML = "Lỗi kết nối!";
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

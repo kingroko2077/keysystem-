@@ -1,0 +1,232 @@
+/* FULLSCREEN FIX */
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    background: #0f172a;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+}
+
+/* Container lớn neon */
+
+.login-container {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 420px;
+
+    padding: 45px 35px;
+
+    background: #131c31;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(0, 255, 255, 0.4);
+
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+
+    overflow: hidden;
+
+}
+
+/* Glow effect */
+
+.login-container::before,
+
+.login-container::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+
+    left: -50%;
+
+    width: 140%;
+
+    height: 140%;
+
+    background: linear-gradient(0deg, transparent, #00ffff, #00ffff);
+
+    transform-origin: bottom right;
+
+    animation: glowing 6s linear infinite;
+
+    opacity: 0.4;
+
+}
+
+.login-container::after {
+
+    animation-delay: -3s;
+
+}
+
+@keyframes glowing {
+
+    0% { transform: rotate(0deg); }
+
+    100% { transform: rotate(360deg); }
+
+}
+
+/* nội dung */
+
+.login-container .content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.login-title {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #00ffff;
+
+    text-shadow: 0 0 10px #00ffff;
+
+    margin-bottom: 30px;
+
+}
+
+/* input */
+
+.input-group {
+
+    position: relative;
+
+    margin-bottom: 25px;
+
+}
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 15px 15px 15px 45px;
+
+    background: transparent;
+
+    border: 1px solid rgba(0, 255, 255, 0.5);
+
+    border-radius: 8px;
+
+    color: #e0ffff;
+
+    font-size: 16px;
+
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+
+}
+
+/* icon */
+
+.icon {
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #00ffff;
+
+    text-shadow: 0 0 6px #00ffff;
+
+    font-size: 19px;
+
+}
+
+/* BUTTON */
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 16px 0;
+
+    background: #00ffff;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: #0f172a;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow: 0 0 18px #00ffff, 0 0 28px rgba(0, 255, 255, 0.4);
+
+    cursor: pointer;
+
+}
+
+.login-btn:hover {
+
+    background: #00e0e0;
+
+}
+
+/* Link */
+
+.register-link {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+}
+
+.register-link a {
+
+    color: #00ffff;
+
+    font-size: 15px;
+
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+    .forgot {
+
+    text-align: right;
+
+    margin-top: 6px;
+
+    margin-bottom: 15px;
+
+}
+
+.forgot a {
+
+    color: #007bff;
+
+    font-size: 14px;
+
+}
+
+}
